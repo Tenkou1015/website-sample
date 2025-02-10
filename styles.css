@@ -19,10 +19,11 @@ header {
 nav ul {
     list-style-type: none;
     padding: 0;
+    display: flex; /* 使用 Flexbox 布局 */
+    justify-content: center; /* 居中对齐 */
 }
 
 nav ul li {
-    display: inline;
     margin-right: 15px;
 }
 
@@ -59,13 +60,12 @@ p {
 /* 针对平板和手机的媒体查询 */
 @media (max-width: 768px) {
     nav ul {
-        display: block;
-        text-align: center;
+        display: flex; /* 保持 Flexbox 布局 */
+        flex-wrap: nowrap; /* 不换行 */
     }
 
     nav ul li {
-        display: block;
-        margin: 10px 0;
+        margin-right: 10px; /* 调整间距 */
     }
 
     section {
@@ -85,7 +85,12 @@ p {
         font-size: 1.5em;
     }
 
+    nav ul {
+        display: flex; /* 保持 Flexbox 布局 */
+        flex-wrap: nowrap; /* 不换行 */
+    }
+
     nav ul li {
-        margin: 5px 0;
+        margin-right: 5px; /* 调整间距 */
     }
 } 
