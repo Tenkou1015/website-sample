@@ -1,0 +1,216 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    background-color: #f5f5dc; /* 浅咖啡色背景 */
+}
+
+header {
+    background-color: #8b4513; /* 深咖啡色 */
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo-link {
+    text-decoration: none;
+}
+
+.logo-text {
+    font-size: 24px; /* 调整为更大的字体大小 */
+    font-weight: bold;
+    color: #fff;
+    margin: 0;
+}
+
+.menu-toggle {
+    display: none; /* 默认隐藏 */
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    margin: 0;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff; /* 白色文字 */
+    font-weight: bold;
+    padding: 10px;
+}
+
+nav ul li a:hover {
+    color: #d2b48c; /* 浅咖啡色悬停效果 */
+}
+
+footer {
+    background-color: #8b4513;
+    padding: 20px;
+    color: #fff;
+}
+
+.footer-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.logo-link {
+    text-decoration: none;
+}
+
+.logo-text {
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+    margin: 0;
+}
+
+.social-buttons {
+    display: flex;
+    gap: 1px; /* 进一步减小间距 */
+}
+
+.social-buttons a {
+    display: inline-block;
+    margin: 0 10px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.social-icon {
+    width: 45px;
+    height: 45px;
+}
+
+footer nav ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content: center; /* 居中对齐 */
+    flex-wrap: wrap; /* 确保在小屏幕上换行 */
+    margin: 10px 0;
+}
+
+footer nav ul li {
+    margin: 5px 10px; /* 调整间距以适应小屏幕 */
+}
+
+footer nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    padding: 5px;
+}
+
+footer nav ul li a:hover {
+    color: #d2b48c;
+}
+
+#menu-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.menu-item {
+    width: 200px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    margin: 10px;
+    text-align: center;
+}
+
+.menu-item img {
+    width: 100%;
+    height: auto;
+}
+
+.menu-item h3 {
+    margin: 10px 0;
+}
+#gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.gallery-item {
+    width: 45%;
+    margin: 15px 0;
+    text-align: center;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.gallery-item p {
+    margin-top: 10px;
+}
+
+/* 添加媒体查询以增强响应式设计 */
+@media (max-width: 768px) {
+    nav ul {
+        display: none; /* 默认隐藏导航栏 */
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background-color: #8b4513;
+        width: 100%;
+        z-index: 1000; /* 确保在其他元素之上 */
+    }
+
+    .menu-toggle {
+        display: block;
+        cursor: pointer;
+        color: #fff;
+        font-size: 24px;
+        margin-left: auto; /* 将汉堡菜单推到右边 */
+    }
+
+    #menu-list, #gallery {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .menu-item, .gallery-item {
+        width: 80%;
+    }
+
+    .social-buttons {
+        justify-content: center;
+    }
+}
+
+@media (min-width: 769px) {
+    .menu-toggle {
+        display: none; /* 大屏幕上隐藏汉堡菜单 */
+    }
+
+    .social-buttons {
+        justify-content: flex-end;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        padding: 10px;
+    }
+
+    .menu-item, .gallery-item {
+        width: 100%;
+    }
+}

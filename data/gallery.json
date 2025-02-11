@@ -1,0 +1,6 @@
+{
+    "gallery": [
+      { "image": "assets/images/store1.jpg", "caption": "我们的第一家店铺" },
+      { "image": "assets/images/store2.jpg", "caption": "温馨的就餐环境" }
+    ]
+  }

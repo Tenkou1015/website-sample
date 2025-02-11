@@ -1,0 +1,7 @@
+{
+    "menu": [
+      { "name": "拿铁", "price": "¥25", "image": "assets/images/latte.jpg" },
+      { "name": "美式", "price": "¥20", "image": "assets/images/americano.jpg" }
+    ]
+  }
+  
