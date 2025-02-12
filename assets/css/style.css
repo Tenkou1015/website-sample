@@ -32,7 +32,7 @@ header {
 nav ul {
     list-style-type: none;
     padding: 0;
-    display: flex;
+    display: flex; /* 默认显示为 flex */
     margin: 0;
 }
 
@@ -163,7 +163,7 @@ footer nav ul li a:hover {
 /* 添加媒体查询以增强响应式设计 */
 @media (max-width: 768px) {
     nav ul {
-        display: none; /* 默认隐藏导航栏 */
+        display: none; /* 小屏幕上默认隐藏导航栏 */
         flex-direction: column;
         position: absolute;
         top: 60px;

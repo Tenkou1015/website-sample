@@ -44,39 +44,10 @@
         <h3>社区参与</h3>
         <p>我们积极参与社区活动，支持本地艺术家和小企业。定期举办活动，欢迎您的参与。</p>
         <h3>环保承诺</h3>
-        <p>我们致力于环保，使用可持续的材料和方法，减少对环境的影响。</p>        <h2>欢迎来到无人咖啡店</h2>
-        <p>在这里，您可以享受高质量的咖啡和舒适的环境。我们的自助服务让您可以随时随地享用美味。</p>
-        <p>高品质咖啡豆</p>
-        <p>舒适的座位</p>
-        <p>免费Wi-Fi</p>
-        <p>24小时营业</p>
-        <h3>我们的特色</h3>
-        <p>无人咖啡店以其独特的自助服务和高品质的咖啡而闻名。我们致力于为每一位顾客提供最佳的咖啡体验。</p>
-        <p>无论您是想在这里放松一下，还是需要一个安静的地方工作，我们都能满足您的需求。</p>
-        <h3>客户评价</h3>
-        <p>"这里的咖啡是我喝过的最好的！" - 顾客A</p>
-        <p>"环境非常舒适，我喜欢在这里工作。" - 顾客B</p>
-        <h3>我们的使命</h3>
-        <p>我们致力于通过创新的自助服务，为顾客提供便利和舒适。我们的目标是成为您日常生活的一部分。</p>
-        <h3>社区参与</h3>
-        <p>我们积极参与社区活动，支持本地艺术家和小企业。定期举办活动，欢迎您的参与。</p>
-        <h3>环保承诺</h3>
         <p>我们致力于环保，使用可持续的材料和方法，减少对环境的影响。</p>
     </main>
 
     <footer>
-
-        <nav>
-            <ul>
-                <li><a href="index.html">HOME</a></li>
-                <li><a href="menu.html">セルフカフェとは</a></li>
-                <li><a href="gallery.html">利用方法</a></li>
-                <li><a href="about.html">サブスク</a></li>
-                <li><a href="contact.html">店舗案内</a></li>
-                <li><a href="faq.html">よくある質問</a></li>
-                <li><a href="fc.html">FC制度</a></li>
-            </ul>
-        </nav>
         <div class="footer-top">
             <a href="index.html" class="logo-link">
                 <h1 class="logo-text">无人咖啡店</h1>
@@ -97,7 +68,7 @@
     <script>
     document.addEventListener("DOMContentLoaded", function() {
         const menuToggle = document.querySelector(".menu-toggle");
-        const navUl = document.querySelector("nav ul");
+        const navUl = document.querySelector("header nav ul");
 
         function updateNavDisplay() {
             if (window.innerWidth >= 769) {
@@ -108,7 +79,14 @@
         }
 
         menuToggle.addEventListener("click", function() {
-            navUl.style.display = navUl.style.display === "flex" ? "none" : "flex";
+            console.log("Menu toggle clicked");
+            console.log("Current display:", navUl.style.display);
+            if (navUl.style.display === "none") {
+                navUl.style.display = "flex"; // 如果当前是隐藏的，则显示
+            } else {
+                navUl.style.display = "none"; // 如果当前是显示的，则隐藏
+            }
+            console.log("New display:", navUl.style.display);
         });
 
         window.addEventListener("resize", updateNavDisplay);
