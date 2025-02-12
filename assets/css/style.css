@@ -3,15 +3,17 @@ body {
     margin: 0;
     padding: 0;
     text-align: center;
-    background-color: #f5f5dc; /* 浅咖啡色背景 */
+    background-color: #f5f5dc;
+    position: relative;
 }
 
 header {
-    background-color: #8b4513; /* 深咖啡色 */
+    background-color: #8b4513;
     padding: 20px;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    position: relative;
 }
 
 .logo-link {
@@ -19,21 +21,27 @@ header {
 }
 
 .logo-text {
-    font-size: 24px; /* 调整为更大的字体大小 */
+    font-size: 24px;
     font-weight: bold;
     color: #fff;
     margin: 0;
 }
 
 .menu-toggle {
-    display: none; /* 默认隐藏 */
+    display: none;
+    cursor: pointer;
+    color: #fff;
+    font-size: 24px;
+    margin-left: auto;
+    padding: 8px;
 }
 
 nav ul {
     list-style-type: none;
     padding: 0;
-    display: flex; /* 默认显示为 flex */
     margin: 0;
+    display: flex;
+    transition: transform 0.3s ease, opacity 0.2s linear;
 }
 
 nav ul li {
@@ -42,13 +50,21 @@ nav ul li {
 
 nav ul li a {
     text-decoration: none;
-    color: #fff; /* 白色文字 */
+    color: #fff;
     font-weight: bold;
     padding: 10px;
+    display: block;
 }
 
 nav ul li a:hover {
-    color: #d2b48c; /* 浅咖啡色悬停效果 */
+    color: #d2b48c;
+}
+
+main {
+    position: relative;
+    z-index: 1;
+    padding: 20px;
+    transition: margin-top 0.3s ease;
 }
 
 footer {
@@ -57,6 +73,61 @@ footer {
     color: #fff;
 }
 
+/* 移动端菜单样式 */
+@media (max-width: 768px) {
+    header {
+        padding: 10px;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    nav ul {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: #8b4513;
+        flex-direction: column;
+        display: none;
+        z-index: 1000;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        padding: 1px 0;
+        margin-top: 0px;
+    }
+
+    nav ul.show-menu {
+        display: flex;
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    nav ul li {
+        margin: 1px 0;
+        text-align: center;
+    }
+}
+
+/* 桌面端样式 */
+@media (min-width: 769px) {
+    .menu-toggle {
+        display: none !important;
+    }
+
+    nav ul {
+        display: flex !important;
+    }
+}
+
+/* 小屏幕间隙修复 */
+@media (max-width: 480px) {
+    nav ul {
+        top: calc(100% - 5px);
+    }
+}
+
+/* 通用内容样式 */
 .footer-top {
     display: flex;
     justify-content: space-between;
@@ -64,20 +135,9 @@ footer {
     margin-bottom: 10px;
 }
 
-.logo-link {
-    text-decoration: none;
-}
-
-.logo-text {
-    font-size: 18px;
-    font-weight: bold;
-    color: #fff;
-    margin: 0;
-}
-
 .social-buttons {
     display: flex;
-    gap: 1px; /* 进一步减小间距 */
+    gap: 1px;
 }
 
 .social-buttons a {
@@ -92,37 +152,14 @@ footer {
     height: 45px;
 }
 
-footer nav ul {
-    list-style-type: none;
-    padding: 0;
-    display: flex;
-    justify-content: center; /* 居中对齐 */
-    flex-wrap: wrap; /* 确保在小屏幕上换行 */
-    margin: 10px 0;
-}
-
-footer nav ul li {
-    margin: 5px 10px; /* 调整间距以适应小屏幕 */
-}
-
-footer nav ul li a {
-    text-decoration: none;
-    color: #fff;
-    font-weight: bold;
-    padding: 5px;
-}
-
-footer nav ul li a:hover {
-    color: #d2b48c;
-}
-
-#menu-list {
+/* 菜单项公共样式 */
+#menu-list, #gallery {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
 }
 
-.menu-item {
+.menu-item, .gallery-item {
     width: 200px;
     padding: 15px;
     border: 1px solid #ddd;
@@ -130,57 +167,8 @@ footer nav ul li a:hover {
     text-align: center;
 }
 
-.menu-item img {
-    width: 100%;
-    height: auto;
-}
-
-.menu-item h3 {
-    margin: 10px 0;
-}
-#gallery {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-}
-
-.gallery-item {
-    width: 45%;
-    margin: 15px 0;
-    text-align: center;
-}
-
-.gallery-item img {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-}
-
-.gallery-item p {
-    margin-top: 10px;
-}
-
-/* 添加媒体查询以增强响应式设计 */
+/* 特殊屏幕尺寸调整 */
 @media (max-width: 768px) {
-    nav ul {
-        display: none; /* 小屏幕上默认隐藏导航栏 */
-        flex-direction: column;
-        position: absolute;
-        top: 60px;
-        right: 0;
-        background-color: #8b4513;
-        width: 100%;
-        z-index: 1000; /* 确保在其他元素之上 */
-    }
-
-    .menu-toggle {
-        display: block;
-        cursor: pointer;
-        color: #fff;
-        font-size: 24px;
-        margin-left: auto; /* 将汉堡菜单推到右边 */
-    }
-
     #menu-list, #gallery {
         flex-direction: column;
         align-items: center;
@@ -189,27 +177,9 @@ footer nav ul li a:hover {
     .menu-item, .gallery-item {
         width: 80%;
     }
-
-    .social-buttons {
-        justify-content: center;
-    }
-}
-
-@media (min-width: 769px) {
-    .menu-toggle {
-        display: none; /* 大屏幕上隐藏汉堡菜单 */
-    }
-
-    .social-buttons {
-        justify-content: flex-end;
-    }
 }
 
 @media (max-width: 480px) {
-    header {
-        padding: 20px;
-    }
-
     .menu-item, .gallery-item {
         width: 100%;
     }
